@@ -9,7 +9,7 @@ const session = require('express-session');
 const path = require('path');
 
 const authController = require('./controllers/auth');
-const foodController = require('./controllers/food');
+const foodController = require('./controllers/pantry');
 const passUserToView = require('./middleware/pass-user-to-view');
 
 app.set('view engine', 'ejs');
