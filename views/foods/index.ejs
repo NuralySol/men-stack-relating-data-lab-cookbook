@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Foods</title>
+</head>
+<body>
+    <h1>All Foods</h1>
+    <ul>
+        <% if (foods && foods.length > 0) { %>
+            <% foods.forEach(food => { %>
+                <li>
+                    <a href="/users/<%= food.userId %>/foods/<%= food._id %>">
+                        <%= food.name %>
+                    </a>
+                </li>
+            <% }) %>
+        <% } else { %>
+            <li>No foods found</li>
+        <% } %>
+    </ul>
+    <a href="/users/<%= userId %>/foods/new">Add New Food</a>
+</body>
+</html>

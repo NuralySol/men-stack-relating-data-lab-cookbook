@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= food.name %> Details</title>
+</head>
+<body>
+    <h1><%= food.name %> Details</h1>
+
+    <p><strong>Description:</strong> <%= food.description %></p>
+    <p><strong>Calories:</strong> <%= food.calories %> kcal</p>
+    <p><strong>Date:</strong> <%= new Date(food.date).toLocaleDateString('en-US') %></p>
+
+    <a href="/users/<%= food.userId %>/foods/<%= food._id %>/edit">Edit</a>
+
+    <form action="/users/<%= food.userId %>/foods/<%= food._id %>?_method=DELETE" method="POST" style="display: inline;">
+        <button type="submit">Delete</button>
+    </form>
+
+    <a href="/users/<%= food.userId %>/foods">Back to Foods</a>
+</body>
+</html>
